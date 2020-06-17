@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
-}
+/* Heading style */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+x-sign {
+    --interval: 1s;
+    display: block;
+    text-shadow: 
+      0 0 10px var(--color1),
+      0 0 20px var(--color2),
+      0 0 40px var(--color3),
+      0 0 80px var(--color4);
+    will-change: filter, color;
+    filter: saturate(60%);
+    animation: flicker steps(100) var(--interval) 1s infinite;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  x-sign:nth-of-type(5) {
+    color: rgb(21, 107, 107);
+    --color1: rgb(33, 197, 197);
+    --color2: aqua;
+    --color3: dodgerblue;
+    --color4: blue;
+    font-family: Sriracha;
   }
-  to {
-    transform: rotate(360deg);
+  
+  @keyframes flicker {
+    50% {
+      color: white;
+      filter: saturate(200%) hue-rotate(20deg);
+    }
   }
+  
+  /* Header style */
+  
+  .navbar {
+    display: flex;
+      background:#07051a;		
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0.8rem 2rem; */
+    z-index: 1;
+    height: 90px;
+    /* width: 100%; */
+    opacity: 2.1;
+    /* margin-top: 1rem; */
+    /* margin-bottom:-10px; */
+  }
+  
+  .navbar ul {
+    display: flex;
+  }
+  
+  .navbar i {
+    color: #3f945b ;
+  }
+  
+  .navbar a {
+    color: rgb(253, 253, 253);
+    /* padding: 0.45rem; */
+    /* margin: 0 0.25rem; */
+  }
+  
+  .navbar a:hover {
+    color:rgb(64, 64, 66);
+  }
+  
+  li {
+    font-size: 17px;
+    margin-right: 20px;
+  }
+  /* ------------------------------------------------------------------------------------------------------ */
+  
+  /* Search Bar  */
+  
+  .input {
+  width: 880px;
+  height: 40px;
+  font-weight:bolder;
+  font-family: cursive;
+  }
+  
+  .button {
+    font-size: 14px;
+    color: #675682;
+    height: 40px;
+    /* width: 80px; */
+  }
+
+/* -------------------------------------------------------------------------------------------------------- */
+   
+/* Footer */
+.footer {
+  position: fixed;
+  /* right: 0; */
+  bottom: 0;
+  left: 0;
+  padding: 0px;
+  width:100%;
+  background:#07051a;
+   color: white;
+   text-align: center;
+   display: flex;
+   align-items: center;
 }
+
+.footer1 {
+  margin-left: 42%;
+}
+
+.heart {
+  color: 'white';
+   font-size: '13px'
+}
+
